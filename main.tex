@@ -1,0 +1,225 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  This Beamer template was created to be a simple and clean.
+%%  Anyone can freely use or modify it for any purpose without
+%%  attribution.
+%%
+%%  The starting point for this template was [1] with further
+%%  inspiration from [2],[3].  Logo taken from [4].
+%%
+%%  [1] http://cameron.bracken.bz/beamer-template
+%%  [2] https://sites.google.com/a/umn.edu/jwolfson/tricks-templates
+%%  [3] https://github.com/hamid-m/UofMN-Beamer-Template
+%%  [4] https://university-relations.umn.edu/resources/presentation-templates-powerpoint
+%%
+%%  Last Modified: April 16, 2020
+%%  Arnab Dey.
+
+\documentclass[xcolor=x11names,compress,aspectratio=169]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package Inclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{psfrag}
+\usepackage{subfig}
+\usepackage[ruled]{algorithm2e}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage{etoolbox}
+\usepackage{dsfont}
+\usepackage{palatino}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Command Declaration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Write here if you need to declare your own commands
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Color Declaration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\xdefinecolor{GopherMaroon}{HTML}{7A0019}
+\xdefinecolor{GopherGold}{HTML}{FFCC33}
+\xdefinecolor{GopherLightGold}{HTML}{FFDE7A}
+\xdefinecolor{GopherDarkMaroon}{HTML}{5B0013}
+\xdefinecolor{Red}{HTML}{FF0000}
+\xdefinecolor{Green}{HTML}{008000}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Two Options, uncomment the desired option.
+%   # 1: Navigation bar shows one 'bullet' per slide
+\useoutertheme[subsection=false,shadow]{miniframes}
+%%%% end of # 1
+
+%   # 2: Navigation bar shows one bullet per subsection
+%        Reference: http://tex.stackexchange.com/a/64419/60315
+%\useoutertheme[subsection=false]{miniframes}
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\slideentry}{\advance\beamer@xpos by1\relax}{}{}{}
+%\def\beamer@subsectionentry#1#2#3#4#5{\advance\beamer@xpos by1\relax}%
+%\makeatother
+%%%% end of # 2
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customization: Theme, fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+%\usefonttheme{serif}
+
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customization: Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor*{lower separation line head}{bg=GopherMaroon}
+\setbeamercolor*{normal text}{fg=black,bg=white} 
+\setbeamercolor*{alerted text}{fg=red} 
+\setbeamercolor*{example text}{fg=black} 
+\setbeamercolor*{structure}{fg=black}
+\setbeamercolor*{frametitle}{fg=GopherDarkMaroon}
+\setbeamercolor{footlinecolor}{bg=GopherMaroon}
+\setbeamercolor{titlelinecolor}{bg=GopherDarkMaroon}
+\setbeamercolor*{palette tertiary}{fg=GopherDarkMaroon,bg=GopherLightGold} 
+\setbeamercolor*{palette quaternary}{fg=GopherDarkMaroon,bg=GopherLightGold} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Customize template further %%%%%%%%%%%%%%%%%%%%%
+% Add Logo and slide numbers to footer
+%\setbeamertemplate{footline}{\parbox{\textwidth}{\vspace*{-15pt}
+%                             ~~
+%                             \includegraphics[width=0.25\paperwidth]{images/Msol-gold.png} 
+%                             \hfill 
+%                             \color{gray}{\tiny \insertframenumber\,/\,\inserttotalframenumber~~~}}}
+\setbeamertemplate{navigation symbols}{}    % remove navigation symbols (http://tex.stackexchange.com/a/688)
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{footlinecolor}
+  \hspace{0.5\paperwidth}
+  \color{GopherLightGold}{\tiny \insertframenumber\,/\,\inserttotalframenumber~~~}
+  \hfill
+    \includegraphics[scale=0.04]{images/Msol-gold.png}
+    \hspace{-0.5cm}%
+  \end{beamercolorbox}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT STARTS HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title slide
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\color{GopherDarkMaroon}TITLE GOES HERE}
+%\subtitle{SUBTITLE}
+\author{
+  AUTHOR NAMES\\
+  {\it University of Minnesota, Twin Cities}\\
+}
+\date{\today}
+
+{% no page #, no logo on title page
+  %\setbeamertemplate{footline}{}
+  \begin{frame}[plain]
+    \titlepage
+    \begin{beamercolorbox}[wd=\paperwidth,ht=10.25ex,dp=2ex,center]{titlelinecolor}%
+    \begin{figure}[h]
+    \includegraphics[scale=0.7]{images/UMN_lgM-D2D-wdmk-gold-wh.png}
+    \end{figure}
+    \vspace{0.2cm}
+  \end{beamercolorbox}
+  % NOTE: I WILL FIND A FIX TO IT IF I GET SOME TIME
+  \vspace{-0.95cm}
+  \end{frame}
+}
+\addtocounter{framenumber}{-1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section: Introduction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\scshape Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Introduction}
+%\tableofcontents
+\begin{itemize}
+\setlength\itemsep{0.5em}
+    \item UMN beamer template 
+    \vspace{0.5em}
+        \begin{itemize}
+        \setlength\itemsep{0.5em}
+            \item Created using official template guidelines
+            \item But slightly modified
+        \end{itemize}
+    \vspace{0.5em}
+    \item Modifications
+    \vspace{0.5em}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item Page numbering
+        \item Concluding page
+    \end{itemize}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Usage}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item Thesis presentations
+        \item Lectures
+    \end{itemize}
+    \vspace{0.2cm}
+    \textcolor{GopherDarkMaroon}{Ace with aesthetics! SKI-U-MAH!!!}
+    \vspace{-0.5cm}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section: Bibliography usage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\scshape Bibliography usage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Citations}
+  \begin{itemize}
+  \setlength\itemsep{0.5em}
+      \item Official template
+      \vspace{0.5em}
+      \begin{itemize}
+          \item Official graphics used\footnotemark
+          \item Modifications\footnotemark
+      \end{itemize}
+  \end{itemize}
+  \footnotetext[1]{\tiny https://university-relations.umn.edu/resources/presentation-templates-powerpoint}
+  \footnotetext[2]{\tiny \textit{added page number}}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section: Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\scshape Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c]{}
+    \centering \Large
+    \textcolor{GopherDarkMaroon}{Have fun!!!}
+\end{frame}
+\begingroup
+%\setbeamertemplate{footline}{}
+%\setbeamertemplate{headline}{}
+{\usebackgroundtemplate{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{images/final}}
+\begin{frame}[plain]{}
+  % frame contents here
+\end{frame}
+}
+\endgroup
+\end{document}
